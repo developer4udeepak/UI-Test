@@ -1,0 +1,25 @@
+
+
+<app-header></app-header>
+ <ng-container class=" bg-light">
+  <div  *ngIf="route.children.length !== 0"  (click)="backClicked()" style=" margin: 10px !important;"><button type="button" class="btn btn-primary">
+    Back
+  </button></div>
+  <div class="album py-5 bg-light" *ngIf="route.children.length === 0">
+    <div class="container">
+  
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col" *ngFor="let data of allGridData">
+          <div class="card cardStyles" style="cursor: pointer; border-radius: 30px;" (click)="navigateToChild(data)">
+             <div class="card-text" id="my-div">
+              <div class="text-justify" class="fill-div">{{data}}</div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  
+</ng-container>

@@ -1,0 +1,55 @@
+
+        
+        
+       
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="text-center">
+                                <h1>Add Customer Details
+                                </h1>
+                            </div>
+                           
+                                <form [formGroup]="formValue">
+                                    <div class="mb-3">
+                                        <label class="form-label">Name <span style="color: red;">*</span></label>
+                                        <input type="text" class="form-control" formControlName="customerName" placeholder="Name"
+                                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Age<span style="color: red;">*</span></label>
+                                        <input type="number" class="form-control" min="0"  oninput="this.value = Math.abs(this.value)" formControlName="customerAge" placeholder="Age"
+                                            >
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Address <span style="color: red;">*</span></label>
+                                        <textarea type="text" class="form-control" formControlName="customerAddress"
+                                            placeholder="Abc road , near abc , pin: 12546" ></textarea>
+                                    </div>
+                                   
+                                    
+                                    <p *ngIf="formValue.invalid && submitted" style="color: red;"> Please fill the required fields</p>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary" (click)="saveCustomerForm()"  >Save</button>
+                                        <button
+                                          type="button"
+                                          style="float: right;"
+                                          class="btn btn-light float-right"
+                                        >
+                                          Cancel
+                                        </button>
+                                      </div>
+                                      
+                              </form>
+                             
+                            </div>
+                              
+            
+                        </div>
+                    </div>
+                </div>
+            
+
+        
+ 
